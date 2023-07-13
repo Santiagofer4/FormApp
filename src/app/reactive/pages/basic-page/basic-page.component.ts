@@ -52,7 +52,6 @@ export class BasicPageComponent implements OnInit {
     }
 
     return ''
-  
   }
 
   onSave(): void {
