@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormControl, FormGroup, ValidationErrors } from "@angular/forms";
+import { FormArray, FormControl, FormGroup, ValidationErrors } from "@angular/forms";
 
 @Injectable({
   providedIn: 'root'
@@ -22,8 +22,12 @@ export class ValidatorsService {
   }
 
   
-  public isValidField( form: FormGroup, field: string ) {
+  public isValidField( form: FormGroup, field: string ): boolean | null {
     return form.controls[field].errors && form.controls[field].touched
+  }
+
+  public isValidFieldInArray( formArray: FormArray, index: number ): boolean | null {
+    return formArray.controls[index].errors && formArray.controls[index].touched
   }
 
 }
