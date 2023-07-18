@@ -20,6 +20,7 @@ export class EmailValidatorService implements AsyncValidator {
 
       subscriber.next( null )
       subscriber.complete()
+
     }).pipe(
       delay(3000)
     )
